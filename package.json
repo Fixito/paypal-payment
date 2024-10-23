@@ -1,0 +1,22 @@
+{
+  "name": "paypal-payment",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "install": "cd client && npm install && cd ../server && npm install",
+    "build:client": "cd server && rimraf dist && cd ../client && npm run build && cpx \"dist/**/*\" ../server/dist",
+    "dev": "concurrently --kill-others-on-fail \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
+    "start": "npm run start --prefix server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "concurrently": "^9.0.1"
+  },
+  "devDependencies": {
+    "rimraf": "^3.0.2",
+    "cpx": "^1.5.0"
+  }
+}
